@@ -31,13 +31,12 @@ def train():
 
     ann.compile(optimizer='adam', loss='mean_squared_error')
 
-    ann.fit(X_Train, Y_Train, batch_size=32, epochs=20000)
+    ann.fit(X_Train, Y_Train, batch_size=32, epochs=50000)
 
     ann.save('TrainedSPY')
 
     pred = ann.predict(sc_x.transform([[468.30, 470.96, 467.05, 84230214]]))
     print(sc_y.inverse_transform(pred))
-
 
 
 if __name__ == '__main__':
